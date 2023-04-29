@@ -16,19 +16,19 @@ body{
 
 
 .support__chat__main{
-    
+    top:96%;
     position: relative;
     transition: all .3s ease-out; 
     height: 100%;
     user-select: none;
-    cursor: pointer;
+
     border-radius: 5px;
     font-family: 'Ubuntu', sans-serif;
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .support__chat__main__show{
-    top: 0;
+    top: 0;   
 }
 
 
@@ -36,12 +36,16 @@ body{
 Header
 */
 .support__chat__header{
-    height: 5%;
+    height: 35px;
     display: flex;
     background-color: #6A0EB0;
     padding: 0.5rem;
     border-radius: 5px 5px 0 0;
-  
+    cursor: pointer;
+}
+
+.support__chat__header__show{
+    cursor: move;
 }
 
 .support__chat__title{
@@ -82,7 +86,7 @@ Messages List
 }
 
 .support__chat__msg{
-    height: 52vh;
+    height: 80%;
     top: 0;
     overflow-y: scroll;
     position: relative;
@@ -157,12 +161,14 @@ Form
 contenteditable
 */
 .div__textarea {
+    /* display: flex; */
+    float: left;
     margin: auto 0;
-    display: block;
+    /* display: block; */
     min-height: 25px;
     max-height: 80px;
     overflow-x: auto;
-    width: 300px;
+    width: 85%;
     padding-left: 10px;
     line-height: 22px;
     font-size: 16px;
@@ -170,9 +176,13 @@ contenteditable
     outline: none;
    
     /* background-color: #9ca3af; */
-    
 
+}
 
+.support__chat__btn{
+/* background-color: aqua; */
+width: 12%;
+float: right;
 }
 
 
