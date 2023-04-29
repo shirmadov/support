@@ -10,6 +10,8 @@ body{
     width: 350px;
     /* overflow: hidden; */
     border-radius: 5px;
+    z-index: 10;
+ 
     /* box-shadow: 10px 10px 5px 12px lightblue; */
 }
 
@@ -21,6 +23,7 @@ body{
     transition: all .3s ease-out; 
     height: 100%;
     user-select: none;
+    background-color: #fff;
 
     border-radius: 5px;
     font-family: 'Ubuntu', sans-serif;

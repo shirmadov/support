@@ -1,4 +1,10 @@
 let open = false;
+let  screenHeight = window.screen.height;
+let  screenWidth = window.screen.width;
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+let w = 0;
+let h = 0;
+const ele = document.querySelector('.js__support__chat');
 
 document.querySelector('.js__support__chat').addEventListener('click', (e)=>{
     let target = e.target;
@@ -20,8 +26,7 @@ document.querySelector('.js__support__chat').addEventListener('click', (e)=>{
    
 })
 
-let  screenHeight = window.screen.height;
-console.log(screenHeight)
+
 
 function contentEditable(){
     const content = document.getElementById('message');
@@ -40,24 +45,21 @@ function contentEditable(){
     });
 }
 
-var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-let w = 0;
-let h = 0;
-const ele = document.querySelector('.js__support__chat');
+
 function mouseDown(){
     document.querySelector('.js__support__chat').addEventListener('mousedown',(e)=>{
-       
+        e = e || window.event;
+        e.preventDefault();
       
         if(open == true){
             pos3 = e.clientX;
-        pos4 = e.clientY;
+            pos4 = e.clientY;
 
         const styles = window.getComputedStyle(ele);
         w = parseInt(styles.width, 10);
         h = parseInt(styles.height, 10);
     
-        // document.onmouseup = closeDragElement;
-        // // call a function whenever the cursor moves:
+
         document.onmousemove = elementDrag;
         document.onmouseup = closeDragElement
         }
@@ -65,30 +67,21 @@ function mouseDown(){
 }
 
 function elementDrag(e) {
-    // e = e || window.event;
-    // e.preventDefault();
-    // console.log(e.clientY, e.clientX )
+    e = e || window.event;
+    e.preventDefault();
     let dy = e.clientY-pos4
-    console.log(dy);
-
-    let elmnt = document.querySelector('.js__support__chat');
-    // // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    console.log((-1*dy) + h);
-    // pos2 = pos4 - e.clientY;
-    // pos3 = e.clientX;
-    // pos4 = e.clientY;
-    // console.log(elmnt.offsetTop)
-    // // set the element's new position:
-    if((((-1*dy) + h)<screenHeight-130) && (((-1*dy) + h)>screenHeight-650)){
-        elmnt.style.height = ((-1*dy) + h) + "px";
+    if((((-1*dy) + h)<screenHeight-130) && (((-1*dy) + h)>400)){
+        ele.style.height = ((-1*dy) + h) + "px";
     }
-    
-    // elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+
+    pos1 = pos3 - e.clientX;
+    pos3 = e.clientX;
+    if((ele.offsetLeft - pos1)>10 && (ele.offsetLeft - pos1)<screenWidth-380){
+        ele.style.left = (ele.offsetLeft - pos1) + "px";
+    }
   }
 
 function closeDragElement() {
-    // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
   }
