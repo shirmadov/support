@@ -103,17 +103,6 @@ Messages List
     padding: 0;
 }
 
-.support__chat__msg__li__right{
-    /* margin: 10px 0; */
-    /* float: right;
-    display: block; */
-}
-
-.support__chat__msg__li__left{
-    /* margin: 10px 0; */
-    /* float: left;
-    display: block; */
-}
 
 .support__chat__text__right{
     background-color: #DEDEDE;
