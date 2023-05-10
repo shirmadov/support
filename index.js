@@ -97,6 +97,7 @@ function closeDragElement() {
 
 
 function supportTemplate(){
+    let link = ` <link rel="stylesheet" href="main.css">`
     let template = `<div class="support__chat js__support__chat">
   
     <div class="support__chat__main js__support__chat__main">
@@ -154,7 +155,9 @@ function supportTemplate(){
     </div>
 </div>`
 
+    let head = document.querySelector("head");
     let body = document.getElementsByTagName('body')[0];
+    head.innerHTML = link;
     body.innerHTML = template;
 }
 
